@@ -1,0 +1,124 @@
+:root {
+  --font-family: "Poppins", sans-serif;
+  --primary-color: #34e89e;
+  --secondary-color: #0f3443;
+  --accent-color: #4a9c99;
+  --text-color: #333;
+  --light-text: #fff;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --background-color: rgba(15, 52, 67, 0.7);
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  font-family: var(--font-family);
+  transition: var(--transition);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 220vh;
+}
+
+.welcome {
+  text-align: center;
+  padding: 20px;
+  background: var(--background-color);
+}
+
+.container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  width: 20vw;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background: radial-gradient(
+    circle,
+    var(--accent-color),
+    var(--secondary-color)
+  );
+  border: none;
+  color: var(--light-text);
+}
+.btn:hover {
+  background: radial-gradient(
+    circle,
+    var(--accent-color) 50%,
+    var(--secondary-color)
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.feature-card {
+  text-align: left;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.animate-fadeIn.visible {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
